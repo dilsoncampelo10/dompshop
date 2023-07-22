@@ -2,10 +2,10 @@
 @section('title','DompShop')
 
 @section('content')
-    <div class="container mt-3">
+    <div>
         <h1>Seja bem-vindo </h1>
         <h5>+ Você pode cadastrar seu produto abaixo</h5>
-        <a href="" class="btn btn-primary">Cadastrar produto</a>
+        <a href="{{route('products.create')}}" class="btn btn-primary">Cadastrar produto</a>
         <hr>
         <div class="row">
             <div class="col-lg-3 col-6">
@@ -28,7 +28,7 @@
                     <div class="small-box bg-warning">
                         <div class="inner">
                             <h3>150</h3>
-                            <p>New Orders</p>
+                            <p>Número de visitas</p>
                         </div>
                         <div class="icon">
                             <i class="ion ion-bag"></i>
@@ -43,7 +43,7 @@
                     <div class="small-box bg-success">
                         <div class="inner">
                             <h3>150</h3>
-                            <p>New Orders</p>
+                            <p>Endereço IP</p>
                         </div>
                         <div class="icon">
                             <i class="ion ion-bag"></i>
