@@ -13,11 +13,6 @@ class ProductController extends Controller
         return view('products.index', compact('products'));
     }
 
-    public function show()
-    {
-        return 'oi 1';
-    }
-
     public function create()
     {
         return view('products.create');
