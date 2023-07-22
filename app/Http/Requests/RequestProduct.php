@@ -31,6 +31,13 @@ class RequestProduct extends FormRequest
 
     public function messages(): array
     {
-        return [];
+        return [
+            'name.required' => 'Nome é obrigatório',
+            'price.required' => 'Preço é obrigatório',
+            'quantity.required' => 'Quantidade é obrigatório',
+            'name.max' => 'Nome teve quantidade de caracteres excedido',
+            'price.numeric' => 'Preço deve ser um número',
+            'quantity.numeric' => 'Quantidade deve ser um número',
+        ];
     }
 }

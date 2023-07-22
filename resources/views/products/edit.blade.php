@@ -16,7 +16,7 @@
               </div>
               <div class="mb-3 col-6">
                 <label for="price" class="form-label">Preço *</label>
-                <input type="text" class="form-control" name="price" id="price" placeholder="Informe o preço do produto" value="{{$products->price}}" required>
+                <input type="number" class="form-control" name="price" id="price" placeholder="Informe o preço do produto" value="{{$products->price}}" step="0.01" required>
               </div>
               <div class="mb-3 col-6">
                 <label for="quantity" class="form-label">Quantidade *</label>
