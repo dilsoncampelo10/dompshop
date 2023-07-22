@@ -49,9 +49,15 @@ class ProductController extends Controller
         return redirect()->route('products.index')->withErrors(['Produto não encontrato']);
     }
 
-    public function update()
+    public function update(int $product, RequestProduct $requestProduct)
     {
-        return 'oi 3';
+        $products = Product::find($product);
+        if ($products) {
+            $products->update($requestProduct->all());
+
+            return redirect()->back()->with('success', 'Produto alterado com sucesso');
+        }
+        return redirect()->route('products.index')->withErrors(['Produto não encontrato']);
     }
 
     public function destroy(int $product)
