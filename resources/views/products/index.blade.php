@@ -3,6 +3,8 @@
 
 @section('content')
 <div class="table-responsive">
+    <h2>Catálogo de Produtos</h2>
+    <hr>
     @if ($products->isNotEmpty())
         <table class="table table-striped">
             <thead>
