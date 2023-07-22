@@ -6,7 +6,8 @@
         <div class="card-header">
             <h2>Cadastrar Produto</h2>
         </div>
-        <form action="" method="post">
+        <form action="{{route('products.store')}}" method="post">
+            @csrf
             <div class="card-body row">
                 <div class="mb-3 col-12">
                     <label for="name" class="form-label">Nome *</label>
