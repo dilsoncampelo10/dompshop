@@ -9,12 +9,13 @@ class ProductController extends Controller
 {
     public function index()
     {
-        return 'oi';
+        $products = Product::all();
+        return view('products.index', compact('products'));
     }
 
-    public function show(){
+    public function show()
+    {
         return 'oi 1';
-
     }
 
     public function create()
@@ -22,7 +23,8 @@ class ProductController extends Controller
         return view('products.create');
     }
 
-    public function store(RequestProduct $requestProduct){
+    public function store(RequestProduct $requestProduct)
+    {
         $product = new Product();
 
         $product->name = $requestProduct->name;
@@ -30,7 +32,7 @@ class ProductController extends Controller
         $product->price = $requestProduct->price;
         $product->quantity = $requestProduct->quantity;
 
-        if($product->save()){
+        if ($product->save()) {
             return redirect()->route('products.index');
         }
 
@@ -38,15 +40,18 @@ class ProductController extends Controller
             ->withErrors($product);
     }
 
-    public function edit($id){
+    public function edit(int $id)
+    {
         return 'oi 2';
     }
 
-    public function update(){
+    public function update()
+    {
         return 'oi 3';
     }
 
-    public function destroy(int $id){
+    public function destroy(int $id)
+    {
         return 'oi 4';
     }
 }
