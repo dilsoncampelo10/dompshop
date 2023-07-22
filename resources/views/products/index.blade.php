@@ -35,6 +35,7 @@
         </table>
     @else
         <h4>Você não possui produtos cadastrados</h4>    
+        <a href="{{route('products.create')}}" class="btn btn-primary">Cadastrar produto</a>
     @endif
 </div>
 @endsection

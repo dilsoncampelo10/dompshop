@@ -40,7 +40,7 @@ class ProductController extends Controller
             ->withErrors($product);
     }
 
-    public function edit(int $id)
+    public function edit(int $product)
     {
         return 'oi 2';
     }
@@ -50,8 +50,13 @@ class ProductController extends Controller
         return 'oi 3';
     }
 
-    public function destroy(int $id)
+    public function destroy(int $product)
     {
-        return 'oi 4';
+        $product = Product::find($product);
+        if ($product) {
+            $product->delete();
+            return redirect()->route('products.index')->with('success', 'Produto deletado com sucesso!');
+        }
+        return redirect()->route('products.index')->withErrors(['Produto não encontrato']);
     }
 }

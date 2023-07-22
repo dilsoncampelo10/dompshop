@@ -29,6 +29,14 @@
               </div>
             </div>
           </nav>
+          @if ($errors->any())
+               {{$errors->first()}}
+           @endif
+           @if (session('success'))
+                <div class="alert alert-success container mt-3" role="alert">
+                    {{session('success')}}
+                </div>
+           @endif
         <div class="container mt-3">
             @yield('content')
         </div>
