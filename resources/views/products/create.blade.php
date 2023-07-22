@@ -23,7 +23,7 @@
                   </div>
                   <div class="mb-3 col-12">
                     <label for="description" class="form-label">Descrição</label>
-                    <textarea class="form-control" id="description" rows="3" placeholder="Informe uma descrição para o produto"></textarea>
+                    <textarea class="form-control" id="description" rows="3" placeholder="Informe uma descrição para o produto" name="description"></textarea>
                   </div>
             </div>
             <div class="card-footer">

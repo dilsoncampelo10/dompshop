@@ -42,7 +42,11 @@ class ProductController extends Controller
 
     public function edit(int $product)
     {
-        return 'oi 2';
+        $products = Product::find($product);
+        if ($products) {
+            return view('products.edit', compact('products'));
+        }
+        return redirect()->route('products.index')->withErrors(['Produto não encontrato']);
     }
 
     public function update()

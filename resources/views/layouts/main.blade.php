@@ -30,7 +30,9 @@
             </div>
           </nav>
           @if ($errors->any())
-               {{$errors->first()}}
+                <div class="alert alert-danger container mt-3" role="alert">
+                    {{$errors->first()}}
+                </div>
            @endif
            @if (session('success'))
                 <div class="alert alert-success container mt-3" role="alert">
