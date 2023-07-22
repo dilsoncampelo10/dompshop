@@ -1,6 +1,5 @@
 @extends('layouts.main')
 @section('title','DompShop')
-
 @section('content')
     <div>
         <h1>Seja bem-vindo </h1>
@@ -10,60 +9,56 @@
         <div class="row">
             <div class="col-lg-3 col-6">
                 <div>
-                    <div class="small-box bg-info">
+                    <div class="small-box bg-info box">
                         <div class="inner">
-                            <h3>150</h3>
+                            <h3>{{$products->count()}}</h3>
                             <p>Produtos Cadastrados</p>
                         </div>
                         <div class="icon">
-                            <i class="ion ion-bag"></i>
+                            <i class="fa-solid fa-cart-shopping"></i>
                         </div>
-                        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
             </div>
 
             <div class="col-lg-3 col-6">
                 <div>
-                    <div class="small-box bg-warning">
+                    <div class="small-box bg-warning box">
                         <div class="inner">
-                            <h3>150</h3>
-                            <p>Número de visitas</p>
+                            <h3>R$ {{number_format($products->avg('price'),2,',','.')}}</h3>
+                            <p>Média de preços</p>
                         </div>
                         <div class="icon">
-                            <i class="ion ion-bag"></i>
+                            <i class="fa-solid fa-dollar-sign"></i>
                         </div>
-                        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
             </div>
 
             <div class="col-lg-3 col-6">
                 <div>
-                    <div class="small-box bg-success">
+                    <div class="small-box bg-success box">
                         <div class="inner">
-                            <h3>150</h3>
+                            <h3>{{ request()->ip() }}</h3>
                             <p>Endereço IP</p>
                         </div>
                         <div class="icon">
-                            <i class="ion ion-bag"></i>
+                            <i class="fa-solid fa-user"></i>
                         </div>
-                        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
             </div>
 
             <div class="col-lg-3 col-6">
                 <div>
-                    <div class="small-box bg-danger">
+                    <div class="small-box bg-danger box">
                         <div class="inner">
-                            <h3>150</h3>
-                            <p>New Orders</p>
+                            <h3>{{number_format($products->avg('quantity'),2,',','.')}}</h3>
+                            <p>Média de estoque</p>
                         </div>
                         <div class="icon">
-                            <i class="ion ion-bag"></i>
+                            <i class="fa-solid fa-bag-shopping"></i>
                         </div>
-                        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
             </div>
